@@ -2,10 +2,11 @@ import requests
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 def fetch_quiz_questions(request):
-    species_name = "Panthera tigris"  # Example species; you can make this dynamic if you want
+    species_name = "Panthera tigris"
     url = f'https://api.gbif.org/v1/species?name={species_name}'
-    
+
     try:
         # Fetch data from GBIF API
         response = requests.get(url)
@@ -18,27 +19,29 @@ def fetch_quiz_questions(request):
         for species in species_info:
             if species.get('scientificName') and species.get('kingdom'):
                 question = {
-                    "question": f"What kingdom does {species['scientificName']} belong to?",
+                    "question": (
+                        f"What kingdom does {species['scientificName']} "
+                        f"belong to?"
+                    ),
                     "correct_answer": species['kingdom'],
-                    "options": ["Animalia", "Plantae", "Fungi", "Protista"],  # Example options
+                    "options": ["Animalia", "Plantae", "Fungi", "Protista"],
                 }
                 questions.append(question)
-
     except requests.RequestException as e:
         print(f"Error fetching data from GBIF: {e}")
         questions = []
 
     return render(request, 'quizzes/quiz_list.html', {'questions': questions})
 
+
 def submit_quiz(request):
     if request.method == 'POST':
         questions = request.POST  # Get posted data
 
         # Here, you can calculate the score based on the correct answers.
-        # In this example, we're simply counting correct answers for simplicity.
-
+        # Example correct answers, replace with dynamic data
         correct_answers = {
-            "question_1": "Animalia",  # Example correct answers, replace with dynamic data
+            "question_1": "Animalia",
             "question_2": "Plantae",
             "question_3": "Fungi",
             "question_4": "Protista",
@@ -50,5 +53,7 @@ def submit_quiz(request):
             if questions.get(key) == correct_answer:
                 score += 1
 
-        return HttpResponse(f"You scored {score} out of 5!")
+        message = f"You scored {score} out of 5!"
+        return HttpResponse(message)
+
     return HttpResponse("Invalid request.")
