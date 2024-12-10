@@ -30,7 +30,6 @@ urlpatterns = [
     path('login/', login_page, name='login_page'),    # Login page
     path('register/', register_page, name='register'),  # Registration page
     path('quizzes/', include('quizzes.urls')),
-    path('', include('authentication.urls')),  # Adjust this to where your main page routes
 ]
 
 # Serve media files if DEBUG is True (development mode)
