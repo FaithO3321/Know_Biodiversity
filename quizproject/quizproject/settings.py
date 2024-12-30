@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-_+7+5b-0@-((w&6jwiz_mas-gdenwlzzx-+v+4@oncfe(^prz8
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True  # If using django-cors-headers
 
+CSRF_TRUSTED_ORIGINS = [
+            'https://8ac5-18-217-5-118.ngrok-free.app'
+            ]
 
 # Application definition
 
