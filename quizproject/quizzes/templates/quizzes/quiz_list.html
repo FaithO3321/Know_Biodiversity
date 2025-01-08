@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Biodiversity Quiz</h1>
+{% if questions %}
+    <form method="post" action="{% url 'submit_quiz' %}">
+        {% csrf_token %}
+        <ul>
+            {% for question in questions %}
+            <li>
+                <h3>{{ question.question }}</h3>
+                <ul>
+                    {% for option in question.options %}
+                    <li>
+                        <input type="radio" name="question_{{ forloop.counter }}" value="{{ option }}">
+                        {{ option }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit Quiz</button>
+    </form>
+{% else %}
+    <p>No questions available at the moment.</p>
+{% endif %}
+{% endblock %}

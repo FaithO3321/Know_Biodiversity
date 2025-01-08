@@ -19,7 +19,9 @@ from django.contrib import admin  # Django admin module
 from django.urls import path       # URL routing
 from authentication.views import *  # Import views from the authentication app
 from django.conf import settings   # Application settings
+from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include, path
 
 # Define URL patterns
 urlpatterns = [
@@ -27,6 +29,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),          # Admin interface
     path('login/', login_page, name='login_page'),    # Login page
     path('register/', register_page, name='register'),  # Registration page
+    path('quizzes/', include('quizzes.urls')),
 ]
 
 # Serve media files if DEBUG is True (development mode)
