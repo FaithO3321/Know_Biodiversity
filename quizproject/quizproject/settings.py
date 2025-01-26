@@ -24,8 +24,16 @@ SECRET_KEY = ('django-insecure-_+7+5b-0@-((w&6jwiz_mas-gdenwlzzx-+v+4@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
+=======
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True  # If using django-cors-headers
+>>>>>>> 89acd04967bd6f6cbaf7fcbc92a0957f811c9b7c
 
+CSRF_TRUSTED_ORIGINS = [
+            'https://8ac5-18-217-5-118.ngrok-free.app'
+            ]
 
 def get_ngrok_url():
     try:

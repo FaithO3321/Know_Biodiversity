@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Biodiversity</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #1ca9c9;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .header .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            position: relative;
+            padding: 50px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .features-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            border-radius: 15px;
+            color: black;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Welcome, Know The Ocean Biodiversity</h1>
+        <p>Discover, learn, and test your knowledge about biodiversity!</p>
+        <a href="/" class="btn btn-light">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="#quiz-section" class="btn btn-success">Start Quiz</a>
+        <a href="/login/" class="btn btn-primary">Login</a>
+        <a href="/register/" class="btn btn-warning">Register</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="video-background">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="https://res.cloudinary.com/dulfenpqs/video/upload/v1736341573/istockphoto-1408197004-640_adpp_is_phb72h.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="features-content">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-seedling fa-3x"></i>
+                    <h3>Explore Biodiversity</h3>
+                    <p>Learn about biodiversity hotspots and endangered species.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-brain fa-3x"></i>
+                    <h3>Interactive Quiz</h3>
+                    <p>Test your knowledge and improve your understanding.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe fa-3x"></i>
+                    <h3>Global Awareness</h3>
+                    <p>Understand the importance of conservation globally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Know Your Biodiversity. All rights reserved.</p>
+        <p>Share this page:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank" class="btn btn-primary btn-sm">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=#&text=Check%20out%20this%20amazing%20Biodiversity%20Quiz!" 
+           target="_blank" class="btn btn-info btn-sm">
+            <i class="fab fa-twitter"></i> X (Twitter)
+        </a>
+      <a href="mailto:?subject=Check%20out%20this%20Biodiversity%20Quiz&body=I%20found%20this%20amazing%20quiz%20on%20biodiversity%20knowledge!%20Check%20it%20out%20here:%20#" 
+       target="_blank" class="btn btn-danger btn-sm">
+        <i class="fas fa-envelope"></i> Gmail
+    </a>
+    <a href="https://www.youtube.com/" target="_blank" class="btn btn-danger btn-sm">
+        <i class="fab fa-youtube"></i> YouTube
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=#" target="_blank" class="btn btn-primary btn-sm">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    </footer>
+
+    <script>
+        // JavaScript functionality (if needed in the future)
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Landing page loaded successfully!");
+        });
+    </script>
+</body>
+</html>
+
